@@ -1,0 +1,63 @@
+import React,{useState,useEffect} from 'react'
+import {photoObj} from "../assets/photObj"
+import {biology} from "../assets/biology";
+
+
+const Home = () => {
+   const [subject,setSubject]=useState(); 
+  return (
+    <div className="container-lg row align-items-center">
+<div className="col-sm-6 scrollable-content justify-content-center align-item-center" style={{marginTop:"70px",marginLeft:"10px"}}>
+<h1 className="text-center">Quiz available</h1>
+<div className="row justify-content-center align-items-center">
+  {photoObj.map((item,index)=>{
+    return(<>
+        <div className="card m-2" style={{width: "18rem"}} key={index}>
+  <img src={item.img} className="card-img-top" style={{ width:"100%",height:"230px"}}/>
+  <div className="card-body">
+    <h5 className="card-title">{item.name}</h5>
+    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" className="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </>);
+  })}
+  <hr></hr>
+  <div className="border rounded-2 p-3 m-2">
+  <h1 className="text-center">Highlights</h1>
+  <br/>
+  {
+  biology.map((item, index) => (
+    <div className="" key={index}>
+      <p className="h4"><span>{item.id}&nbsp;&nbsp;</span>{item.question}</p>
+      {item.options.map((op, opIndex) => (
+        <p key={opIndex} className="p-1 hover-effect" style={{cursor:"pointer"}}>{op}</p>
+      ))}
+    </div>
+  ))
+}
+
+  </div>
+</div>
+      <div className="col-sm-6  row container-lg  justify-content-center align-items-center" style={{height:"80vh",top:"-2px",right:"-3px",position:"fixed"}}>
+  <div className="col-sm-6" style={{width:"75%"}}>
+    <div className="card p-2">
+    <h1 className="text-center">Welcome</h1>
+      <div className="card-body">
+
+        <label className="card-title">email</label>
+        <input type="email" className="form-control w-75" placeholder="Enter your email"/>
+        <label className="card-title my-2 ">Password</label>
+        <input type="email" className="form-control mb-3 w-75" placeholder="Enter your password"/>
+        <a href="#" className="btn btn-primary my-2 px-5">login</a>
+        <a href="#" className="btn btn-info text-light my-2 mx-2 px-5">sign up</a>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    </div>
+  )
+}
+
+export default Home
