@@ -39,7 +39,7 @@ const Home = () => {
 
   </div>
 </div>
-      <div className="col-sm-6  row container-lg  justify-content-center align-items-center" style={{height:"80vh",top:"-2px",right:"-3px",position:"fixed"}}>
+      <div className="col-sm-6  row container-lg  justify-content-center align-items-center unscrollable-contnent">
   <div className="col-sm-6" style={{width:"75%"}}>
     <div className="card p-2">
     <h1 className="text-center">Welcome</h1>
