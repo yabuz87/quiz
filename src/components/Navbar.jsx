@@ -26,14 +26,17 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" style={{cursor:"pointer"}} onClick={homePage}>Home</a>
+              {/* <li className="nav-item">
+                <a className="nav-link active" aria-current="page" style={{cursor:"pointer"}} >Home</a>
+              </li> */}
+              <li>
+                <a className="btn btn-light text-dark my-2 mx-2 border px-5 bg-light" style={{fontSize:"21px"}} onClick={homePage}>Home</a>
               </li>
               <li>
-                <a className="btn btn-info text-light my-2 mx-2 px-5" onClick={loginPage}>Login</a>
+                <a className="btn btn-info text-light my-2 mx-2  px-5" onClick={loginPage}>Login</a>
               </li>
               <li>
-                <a className="btn btn-warning text-light my-2 mx-2 px-5" onClick={registerPage}>Register</a>
+                <a className="btn btn-warning text-light  my-2 mx-2 px-5" onClick={registerPage}>Register</a>
               </li>
             </ul>
           </div>

@@ -3,7 +3,7 @@ import React from 'react'
 const Login = () => {
   return (
     <div className="container-fluid">
-    <div className="col-sm-6 container-lg  justify-content-center align-items-center" style={{paddingTop:"100px"}}>
+    <div className="col col-lg-6 container-lg my-2  justify-content-center align-items-center" style={{paddingTop:"100px"}}>
 <div className="col-sm-6" style={{width:"75%"}}>
   <div className="card p-2">
   <h1 className="text-center">Log in</h1>

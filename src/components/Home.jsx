@@ -40,7 +40,7 @@ const Home = () => {
 
   </div>
 </div>
-      <div className="col-sm-5  row container-lg  justify-content-center align-items-center unscrollable-contnent">
+      <div className="col-md-5 row container-lg  justify-content-center align-items-center unscrollable-contnent d-sm-none d-lg-block " style={{paddingTop:"100px"}}>
   <div className="col-sm-6" style={{width:"75%"}}>
     <div className="card p-2">
     <h1 className="text-center">Log in</h1>
