@@ -33,8 +33,12 @@ const DashBoard = () => {
     <i className="bi bi-person-fill" style={{fontSize: "130px", border: "solid 0.2px black", borderRadius: "150px"}}></i>
   </div>
   <h2>Welcome, {userData.FirstName}</h2>
-  {/* <p>Email: {userData.email}</p> */}
-  {/* Add more fields as needed */}
+  <h3>Scores</h3>
+          <ul>
+            {Object.keys(userData.scores).map((subject, index) => (
+              <li key={index}>{subject}: {userData.scores[subject]}</li>
+            ))}
+            </ul>
 </div>
 
       ) : (

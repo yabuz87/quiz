@@ -37,7 +37,15 @@ const Register = () => {
           LastName: lastName,
           email: email,
           password: password,
+          scores: {
+            math: 0,
+            ComputerScience: 0,
+            Pschology: 0,
+            Biology:0
+            // Add other subjects as needed
+          }
         });
+        
         navigate("/dashboard");
         toast.success(`hey ${firstName} you registered successfully`,{
           position:"top-center"

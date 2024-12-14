@@ -1,14 +1,13 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { auth } from './firebase/Firebase';
-// import {  } from 'react-toastify';
-import { ToastContainer,toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Ensure Toastify CSS is imported
-import './Spinner.css'; // Import the spinner CSS
+import { auth, provider } from './firebase/Firebase';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './Spinner.css';
 
 const Login = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -20,6 +19,24 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/dashboard");
       toast.success("User logged in successfully", {
+        position: "top-center"
+      });
+    } catch (err) {
+      console.log(err.message);
+      toast.error(err.message, {
+        position: "bottom-center"
+      });
+    } finally {
+      setLoading(false); // Set loading to false after registration completes
+    }
+  };
+
+  const googleSignIn = async () => {
+    setLoading(true);
+    try {
+      await signInWithPopup(auth, provider);
+      navigate("/dashboard");
+      toast.success("User logged in with Google successfully", {
         position: "top-center"
       });
     } catch (err) {
@@ -69,7 +86,7 @@ const Login = () => {
               </form>
               <p className="text-center">or</p>
               <hr />
-              <button className="btn btn-light w-100 py-2">
+              <button className="btn btn-light w-100 py-2" onClick={googleSignIn}>
                 <i className="bi bi-google p-2"></i>
                 <span className="text-dark font-weight-bold">Sign in with Google</span>
               </button>
