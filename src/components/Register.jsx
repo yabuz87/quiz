@@ -3,8 +3,9 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from './firebase/Firebase';
 import { setDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'bootstrap/dist/css/bootstrap.min.css';  // Ensure Bootstrap CSS is imported
 
 const Register = () => {
   const [firstName, setFirstName] = useState('');
@@ -12,14 +13,19 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [loading, setLoading] = useState(false); // State for loading
+
+  const navigate = useNavigate();
 
   const registerHandler = async (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      toast.error("Passwords do not match!", { position: "top-center" });
       return;
     }
+
+    setLoading(true); // Set loading to true
 
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -29,19 +35,41 @@ const Register = () => {
           FirstName: firstName,
           LastName: lastName,
           email: email,
-          password: password
+          password: password,
         });
-        toast.success("User REgistered Successfully!!",
-        {position:"top-center"});
+        toast.success("User Registered Successfully!!", {
+          position: "top-center",
+        });
+        navigate("/dashboard");
       }
     } catch (err) {
       console.log(err.message);
-      toast.success(err.message,{position:"top-center"});
+      toast.error(err.message, {
+        position: "top-center",
+      });
+    } finally {
+      setLoading(false); // Set loading to false after registration completes
     }
   };
 
   return (
     <div className="container-lg">
+      <ToastContainer />
+      {loading && (
+        <div className="d-flex justify-content-center align-items-center" style={{
+          position: 'fixed', 
+          top: 0, 
+          left: 0, 
+          width: '100vw', 
+          height: '100vh', 
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+          zIndex: 9999
+        }}>
+          <div className="spinner-border text-light" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      )}
       <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ paddingTop: "100px" }}>
         <div style={{ width: "75%" }}>
           <div className="card p-2">
