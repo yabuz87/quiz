@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { auth, db } from '../../firebase/Firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
+import { photoObj } from '../../../assets/photObj';
+import { auth, db } from '../../firebase/Firebase';
 import './index.css';
 
 const DashBoard = () => {
@@ -26,26 +27,58 @@ const DashBoard = () => {
 
   return (
     <div className="container">
-      <h1 className="text-center">User Dashboard</h1>
+
+
+    <div className=" col-6 row justify-content-center align-items-center">
+      {photoObj.map((item,index)=>{
+       return( <>
+            <div className="card m-2" style={{width: "18rem"}} key={index}>
+      <img src={item.img} className="card-img-top" style={{ width:"100%",height:"230px"}}/>
+      <div className="card-body">
+        <h5 className="card-title">{item.name}</h5>
+        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" className="btn btn-primary px-5">Go</a>
+      </div>
+    </div>
+        </>)
+      })}
+      </div>
+     
       {userData ? (
-        <div className="container-lg unscrollable-contnent">
-  <div className="rounded-pill p-5" style={{width: "200px"}}>
-    <i className="bi bi-person-fill" style={{fontSize: "130px", border: "solid 0.2px black", borderRadius: "150px"}}></i>
+        <div className="col-3 unscrollable-contnent shadow-3 me-3" style={{paddingTop:"100px"}}>
+        <h1 className="text-center">User Dashboard</h1>
+  <div className="rounded-pill text-center" style={{width: "100%"}}>
+    <i className="bi bi-person-fill rounded-pill" style={{fontSize: "120px", border: "solid 0.2px black"}}></i>
   </div>
-  <h2>Welcome, {userData.FirstName}</h2>
-  <h3>Scores</h3>
-          <ul>
-            {Object.keys(userData.scores).map((subject, index) => (
-              <li key={index}>{subject}: {userData.scores[subject]}</li>
-            ))}
-            </ul>
+  <h2 className="text-center">Welcome, {userData.FirstName}</h2>
+  <h3 className="text-center">Recent</h3>
+  <table className="border p-3 text-center">
+  <thead className="gap-2">
+    <tr>
+      <th className="px-3">Subjects</th>
+      <th className="px-3">Score (100)</th>
+    </tr>
+  </thead>
+  <tbody >
+    {Object.keys(userData.scores).map((subject, index) => (
+      <tr key={index}>
+        <td className="px-3">{subject}</td>
+        <td className="px-3">{userData.scores[subject]}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
 </div>
 
       ) : (
         <p>Loading...</p>
       )}
-    </div>
-  );
+
+
+
+      
+    </div>);
 };
 
 
