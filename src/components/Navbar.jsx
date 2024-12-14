@@ -4,9 +4,17 @@ import { Link, useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const nextPage = () => {
+  const registerPage = () => {
     navigate("/register");
   };
+  const loginPage=()=>
+  {
+    navigate("/login");
+
+  }
+  const homePage=()=>{
+    navigate("/");
+  }
 
   return (
     <div className="container-fluid p-0">
@@ -19,13 +27,13 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Login</a>
+                <a className="nav-link active" aria-current="page" style={{cursor:"pointer"}} onClick={homePage}>Home</a>
               </li>
               <li>
-                <a className="btn btn-warning text-light my-2 mx-2 px-5" onClick={nextPage}>Register</a>
+                <a className="btn btn-info text-light my-2 mx-2 px-5" onClick={loginPage}>Login</a>
+              </li>
+              <li>
+                <a className="btn btn-warning text-light my-2 mx-2 px-5" onClick={registerPage}>Register</a>
               </li>
             </ul>
           </div>
