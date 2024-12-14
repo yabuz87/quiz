@@ -26,9 +26,9 @@ const DashBoard = () => {
 
   return (
     <div className="container">
-      <h1>User Dashboard</h1>
+      <h1 className="text-center">User Dashboard</h1>
       {userData ? (
-        <div className="container-lg" style={{position: "fixed", right: "1px", top: "10px"}}>
+        <div className="container-lg unscrollable-contnent">
   <div className="rounded-pill p-5" style={{width: "200px"}}>
     <i className="bi bi-person-fill" style={{fontSize: "130px", border: "solid 0.2px black", borderRadius: "150px"}}></i>
   </div>

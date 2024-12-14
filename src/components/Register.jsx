@@ -5,6 +5,7 @@ import { setDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './spinner.css';
 import 'bootstrap/dist/css/bootstrap.min.css';  // Ensure Bootstrap CSS is imported
 
 const Register = () => {
@@ -37,16 +38,10 @@ const Register = () => {
           email: email,
           password: password,
         });
-        toast.success("User Registered Successfully!!", {
-          position: "top-center",
-        });
         navigate("/dashboard");
       }
     } catch (err) {
-      console.log(err.message);
-      toast.error(err.message, {
-        position: "top-center",
-      });
+      alert(err.message);
     } finally {
       setLoading(false); // Set loading to false after registration completes
     }
@@ -54,23 +49,17 @@ const Register = () => {
 
   return (
     <div className="container-lg">
-      <ToastContainer />
       {loading && (
         <div className="d-flex justify-content-center align-items-center" style={{
-          position: 'fixed', 
-          top: 0, 
-          left: 0, 
-          width: '100vw', 
-          height: '100vh', 
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-          zIndex: 9999
+         
         }}>
-          <div className="spinner-border text-light" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
+          <div className="spinner-overlay">
+  <div className="spinner"></div>
+</div>
+
         </div>
       )}
-      <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ paddingTop: "100px" }}>
+      <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ paddingTop: "20px" }}>
         <div style={{ width: "75%" }}>
           <div className="card p-2">
             <h1 className="text-center">Register</h1>
