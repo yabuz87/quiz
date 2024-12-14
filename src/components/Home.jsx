@@ -51,7 +51,6 @@ const Home = () => {
         <label className="card-title my-2 ">Password</label>
         <input type="email" className="form-control mb-3 w-75" placeholder="Enter your password"/>
         <a href="#" className="btn btn-primary my-2 px-5">login</a>
-        <a href="#" className="btn btn-info text-light my-2 mx-2 px-5">Register</a>
       </div>
     </div>
   </div>

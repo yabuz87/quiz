@@ -20,6 +20,7 @@ const Navbar = () => {
         <li className="nav-item">
           <a className="nav-link" href="#">Register</a>
         </li>
+        <li> <a href="#" className="btn btn-info text-light my-2 mx-2 px-5">Register</a></li>
       </ul>
     </div>
   </div>
