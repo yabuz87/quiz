@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from "./firebase/Firebase"; // Ensure the correct path to your firebase configuration
+import { auth,db} from "./firebase/Firebase";
+import {setDoc,doc} from "firebase/firestore"
 
 const Register = () => {
   const [firstName, setFirstName] = useState('');
@@ -21,6 +22,15 @@ const Register = () => {
       await createUserWithEmailAndPassword(auth, email, password);
       const user = auth.currentUser;
       console.log(user);
+      if(user)
+      {
+        await setDoc(doc(db,"user",user.id),{
+          FirstName:firstName,
+          LastName:lastName,
+          email:email,
+          password:password
+        });
+      }
     } catch (err) {
       console.log(err.message);
     }
