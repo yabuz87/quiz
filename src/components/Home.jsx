@@ -7,7 +7,7 @@ const Home = () => {
    const [subject,setSubject]=useState(); 
   return (
     <div className="container-lg row align-items-center">
-<div className="col-sm-6 scrollable-content justify-content-center align-item-center" style={{marginTop:"70px",marginLeft:"10px"}}>
+<div className="col-sm-7 scrollable-content " style={{marginTop:"70px",marginLeft:"10px"}}>
 <h1 className="text-center">Quiz available</h1>
 <div className="row justify-content-center align-items-center">
   {photoObj.map((item,index)=>{
@@ -17,7 +17,7 @@ const Home = () => {
   <div className="card-body">
     <h5 className="card-title">{item.name}</h5>
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
+    <a href="#" className="btn btn-primary px-5">Go</a>
   </div>
 </div>
     </>);
@@ -39,10 +39,11 @@ const Home = () => {
 
   </div>
 </div>
-      <div className="col-sm-6  row container-lg  justify-content-center align-items-center unscrollable-contnent">
+      <div className="col-sm-5  row container-lg  justify-content-center align-items-center unscrollable-contnent">
   <div className="col-sm-6" style={{width:"75%"}}>
     <div className="card p-2">
     <h1 className="text-center">Welcome</h1>
+    <hr/>
       <div className="card-body">
 
         <label className="card-title">email</label>
