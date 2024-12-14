@@ -1,18 +1,24 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { auth } from './firebase/Firebase';
-import { toast } from 'react-toastify';
+// import {  } from 'react-toastify';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Ensure Toastify CSS is imported
+import './Spinner.css'; // Import the spinner CSS
 
 const Login = () => {
+  const navigate=useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading]=useState(false);
+  const [loading, setLoading] = useState(false);
 
   const submitHandle = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      console.log("User logged in successfully");
+      navigate("/dashboard");
       toast.success("User logged in successfully", {
         position: "top-center"
       });
@@ -21,14 +27,19 @@ const Login = () => {
       toast.error(err.message, {
         position: "bottom-center"
       });
-    }finally {
+    } finally {
       setLoading(false); // Set loading to false after registration completes
     }
-  }
+  };
 
   return (
     <div className="container-fluid">
-    
+      <ToastContainer />
+      {loading && (
+        <div className="spinner-overlay">
+          <div className="spinner"></div>
+        </div>
+      )}
       <div className="col col-lg-6 container-lg my-2 justify-content-center align-items-center" style={{ paddingTop: "20px" }}>
         <div className="col-sm-6" style={{ width: "75%" }}>
           <div className="card p-2">
@@ -37,37 +48,27 @@ const Login = () => {
             <div className="card-body">
               <form onSubmit={submitHandle}>
                 <label className="card-title">Email</label>
-                <input 
-                  type="email" 
-                  className="form-control w-100" 
+                <input
+                  type="email"
+                  className="form-control w-100"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email" 
-                  required 
+                  placeholder="Enter your email"
+                  required
                 />
                 <label className="card-title my-2">Password</label>
-                <input 
-                  type="password" 
-                  className="form-control w-100" 
+                <input
+                  type="password"
+                  className="form-control w-100"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter your password" 
-                  required 
+                  placeholder="Enter your password"
+                  required
                 />
                 <button type="submit" className="btn btn-primary my-2 px-5 w-100">Sign in</button>
               </form>
               <p className="text-center">or</p>
               <hr />
-              {loading && (
-        <div className="d-flex justify-content-center align-items-center" style={{
-         
-        }}>
-          <div className="spinner-overlay">
-  <div className="spinner"></div>
-</div>
-
-        </div>
-      )}
               <button className="btn btn-light w-100 py-2">
                 <i className="bi bi-google p-2"></i>
                 <span className="text-dark font-weight-bold">Sign in with Google</span>
@@ -78,6 +79,6 @@ const Login = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

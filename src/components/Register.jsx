@@ -39,9 +39,15 @@ const Register = () => {
           password: password,
         });
         navigate("/dashboard");
+        toast.success(`hey ${firstName} you registered successfully`,{
+          position:"top-center"
+       })
       }
     } catch (err) {
       alert(err.message);
+      toast.success(err.message,{
+        position:"bottom-center"
+      })
     } finally {
       setLoading(false); // Set loading to false after registration completes
     }
@@ -49,6 +55,7 @@ const Register = () => {
 
   return (
     <div className="container-lg">
+    <ToastContainer/>
       {loading && (
         <div className="d-flex justify-content-center align-items-center" style={{
          
