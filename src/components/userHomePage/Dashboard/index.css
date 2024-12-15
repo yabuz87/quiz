@@ -1,4 +1,127 @@
-body{
-    padding-top:100px;
+.profile
+{
+    position:fixed;
+    padding:0px 20px;
+    width:230px;
+    top:0;
+    left:0;
+    height:100%;
 
+    background-color: azure;
+}
+.profile-sec {
+    display:flex;
+    margin-top:30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+   
+   
+}
+.profile-sec i{
+        font-size:60px;
+        border: solid 0.3px;
+        padding:20px 40px;
+        border-radius: 100px;
+}
+.profile-sec p{
+    font-weight: bold;
+}
+.profile-btn{
+    background-color:rgb(182, 66, 240);
+    color:white;
+    width:100%;
+}
+.profile-btn:hover{
+    border:solid black 0.4px;
+}
+.menu-option{
+    margin-top:60px;
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+    justify-content: center;
+    align-items: center;
+}
+.menu-option div{
+    display:flex;
+    font-size:20px;
+    gap:10px;
+    cursor:pointer
+}
+
+
+
+.detail-section{
+    /* margin-left:170px;  */
+    width:100%;
+    padding-top:70px;
+    display:flex;
+    padding-left:170px;
+    flex-direction: column;
+}
+.header-nav{
+    position: fixed;
+    margin-left:170px; 
+    left:0;
+    top:0px;
+   height:60px;
+   width:100%;
+   overflow:hidden;
+   display:flex;
+   z-index: 10;
+   padding:10px 4px;
+   align-items: center;
+   justify-content:space-around;
+   flex:1 1 1;
+   font-size:20px;
+   
+}
+.header-nav div{
+        display:flex;
+        gap:15px;
+        margin-right:60px;
+        transition:0.4s;
+
+}
+.header-nav div i{
+    cursor:pointer;
+   
+   
+
+}
+.icon{
+    padding:3px;
+    background-color: whitesmoke;  
+}
+
+.header-nav div i:hover{
+    transform:scale(1.04);
+    transition:0.4s;
+}
+.search-sec{
+
+    background-color:whitesmoke;
+    padding:5px 10px;
+    border-radius: 20px;;
+}
+.search-sec input,.search-sec input:focus{
+    border:none;
+    outline:none;
+    width:100%;
+    background-color:whitesmoke;
+    font-size:16px;
+}
+
+.body-section{
+    padding-top:50px;
+    background-color:rgb(225, 225, 225);
+    border-radius: 10px;
+    width:100%;
+}
+.quick-option{
+    display:flex;
+    /* flex:1 1 1; */
+    overflow: auto;
 }

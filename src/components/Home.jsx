@@ -3,15 +3,19 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import {photoObj} from "../assets/photObj"
 import {biology} from "../assets/biology";
 import Login from "./Login";
+import Navbar from './Navbar';
 
 
 const Home = () => {
    const [subject,setSubject]=useState(); 
   return (
+    <>
+      <Navbar/>
+   
     <div className="container-lg row align-items-center">
-<div className="col-sm-7 scrollable-content " style={{marginTop:"70px",marginLeft:"10px"}}>
+<div className="col-md-7 scrollable-content " style={{marginTop:"70px",marginLeft:"10px"}}>
 <h1 className="text-center">Quiz available</h1>
-<div className="row justify-content-center align-items-center">
+<div className="row  justify-content-center align-items-center">
   {photoObj.map((item,index)=>{
     return(<>
         <div className="card m-2" style={{width: "18rem"}} key={index}>
@@ -41,11 +45,13 @@ const Home = () => {
 
   </div>
 </div>
-      <div className="col-md-5 row container-lg  unscrollable-contnent  w-75 d-sm-none d-lg-block " style={{paddingTop:"100px"}}>
-     <Login/>
+      
+    </div>
+    <div className="col-md-5 row container-lg  unscrollable-contnent  w-75 d-sm-none d-lg-block " style={{paddingTop:"100px"}}>
+     {/* <Login/> */}
 </div>
     </div>
-    </div>
+    </>
   )
 }
 

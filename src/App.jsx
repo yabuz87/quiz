@@ -9,7 +9,7 @@ import DashBoard from './components/userHomePage/Dashboard/DashBoard';
 const App = () => {
   return (
     <Router>
-      <Navbar/>
+      
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/login" element={<Login/>}/>

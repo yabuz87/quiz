@@ -10,6 +10,18 @@ export const photoObj=
         img:img1
         },
         {name:"biology",
+        img:img1
+        },
+        {name:"biology",
+        img:img1
+        },
+        {name:"biology",
+        img:img1
+        },
+        {name:"biology",
+        img:img1
+        },
+        {name:"biology",
         img:img2
         },
         {name:"Computer Science",

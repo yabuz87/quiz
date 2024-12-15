@@ -50,51 +50,54 @@ const Login = () => {
   };
 
   return (
-    <div className="container-fluid">
-      <ToastContainer />
-      {loading && (
-        <div className="spinner-overlay">
-          <div className="spinner"></div>
-        </div>
-      )}
-      <div className="col col-lg-6 container-lg my-2 justify-content-center align-items-center" style={{ paddingTop: "20px" }}>
-        <div className="col-sm-6" style={{ width: "75%" }}>
-          <div className="card p-2">
-            <h1 className="text-center">Log in</h1>
-            <hr />
-            <div className="card-body">
-              <form onSubmit={submitHandle}>
-                <label className="card-title">Email</label>
-                <input
-                  type="email"
-                  className="form-control w-100"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
-                />
-                <label className="card-title my-2">Password</label>
-                <input
-                  type="password"
-                  className="form-control w-100"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter your password"
-                  required
-                />
-                <button type="submit" className="btn btn-primary my-2 px-5 w-100">Sign in</button>
-              </form>
-              <p className="text-center">or</p>
-              <hr />
+    <div className="container-lg">
+        <ToastContainer/>
+          {loading && (
+            <div className="d-flex justify-content-center align-items-center" style={{
+             
+            }}>
+              <div className="spinner-overlay">
+      <div className="spinner"></div>
+    </div>
+    
+            </div>
+          )}
+          <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ paddingTop: "20px" }}>
+            <div style={{ width: "75%" }}>
+              <div className="card p-2">
+                <h1 className="text-center">Login</h1>
+                <hr />
+                <div className="card-body">
+                  <form onSubmit={submitHandle}>
+                    <label className="card-title">email:</label>
+                    <input
+                      type="text"
+                      className="form-control w-100"
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="email"
+                      required
+                    />
+                    <label className="card-title">Password:</label>
+                    <input
+                      type="text"
+                      className="form-control w-100"
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Last Name"
+                      required
+                    />
+                    <button type="submit" className="btn btn-primary my-2 px-5 w-100">login</button>
+                  </form>
+                  <p className="text-center">or</p>
+               <hr />
               <button className="btn btn-light w-100 py-2" onClick={googleSignIn}>
                 <i className="bi bi-google p-2"></i>
                 <span className="text-dark font-weight-bold">Sign in with Google</span>
               </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 
