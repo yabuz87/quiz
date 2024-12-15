@@ -2,16 +2,16 @@
 {
     position:fixed;
     padding:0px 20px;
-    width:230px;
+    width:180px;
     top:0;
     left:0;
+    z-index: 11;
     height:100%;
-
     background-color: azure;
 }
 .profile-sec {
     display:flex;
-    margin-top:30px;
+    margin-top:50px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -25,16 +25,23 @@
         padding:20px 40px;
         border-radius: 100px;
 }
+.menu-option div{
+    transition:0.4s;
+}
+.menu-option div:hover{
+    transform: scale(1.04);
+    transition:0.4s;
+}
 .profile-sec p{
     font-weight: bold;
 }
-.profile-btn{
+.profile-btn,.card-btn{
     background-color:rgb(182, 66, 240);
     color:white;
     width:100%;
 }
-.profile-btn:hover{
-    border:solid black 0.4px;
+.profile-btn:hover,.card-btn:hover{
+    border:solid black 0.5px;
 }
 .menu-option{
     margin-top:60px;
@@ -54,7 +61,7 @@
 
 
 .detail-section{
-    /* margin-left:170px;  */
+    background-color:rgb(225, 225, 225);
     width:100%;
     padding-top:70px;
     display:flex;
@@ -73,6 +80,7 @@
    z-index: 10;
    padding:10px 4px;
    align-items: center;
+   background-color: white;
    justify-content:space-around;
    flex:1 1 1;
    font-size:20px;
@@ -115,13 +123,52 @@
 }
 
 .body-section{
-    padding-top:50px;
-    background-color:rgb(225, 225, 225);
+    padding-top:20px;
     border-radius: 10px;
     width:100%;
 }
 .quick-option{
-    display:flex;
-    /* flex:1 1 1; */
-    overflow: auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap:10px;
+    row-gap: 15px;
+    overflow:hidden;
+}
+
+.logout-btn{
+    background-color: black;
+    color:white;
+    border:solid black 0.5px;
+    width: 100%;
+}
+.logout-btn:hover{
+    background-color: #333;
+    color:white;
+}
+
+.logo-name{
+    cursor:pointer
+}
+
+.logoname
+
+{
+    font-family: "Sankofa Display", "sans-serif"; 
+     font-size:20px;
+     font-weight:600;
+     background: linear-gradient(267deg, #add550 0.36%, #5b0b42 100%);
+     -webkit-background-clip: text;
+      background-clip: text; 
+      color:transparent;
+}
+
+.logoname-end
+{
+    background: linear-gradient(267deg, #Da7c25 0.36%, #2c2130 100%);
+    -webkit-background-clip: text;
+     background-clip: text; 
+     font-size:60px;
+     font-weight:600;
+     font-family: "Sankofa Display", "sans-serif";
+     color:transparent;
 }
