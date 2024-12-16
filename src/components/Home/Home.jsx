@@ -43,8 +43,9 @@ const Home = () => {
         </div>
         
         <h3 className="text-center">Exams are Available</h3>
-        <hr />
-        <div className="middle-div">  
+        <hr/>
+        <Carousel/>
+        <div className="middle-div mt-5">  
           {exams.map((item, index) => {
             const embedUrl = getEmbedUrl(item.url); 
             return (
@@ -66,9 +67,6 @@ const Home = () => {
             );
           })}
         </div>
-        
-        <h3 className="text-center">Courses</h3>
-        <Carousel />
         <hr />
       </div>
     </div>
