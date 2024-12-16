@@ -7,7 +7,7 @@
     left:0;
     z-index: 11;
     height:100%;
-    background-color: azure;
+    background-color:rgb(225, 225, 225);
 }
 .profile-sec {
     display:flex;
@@ -53,7 +53,7 @@
     margin-top:60px;
     display:flex;
     flex-direction: column;
-    gap:15px;
+    gap:13px;
     justify-content: center;
     align-items: center;
 }
@@ -67,7 +67,7 @@
 
 
 .detail-section{
-    background-color:rgb(225, 225, 225);
+    
     width:100%;
     padding-top:70px;
     display:flex;
@@ -86,7 +86,7 @@
    z-index: 10;
    padding:10px 4px;
    align-items: center;
-   background-color: white;
+   background-color:rgb(225, 225, 225);
    justify-content:space-around;
    flex:1 1 1;
    font-size:20px;
@@ -154,27 +154,4 @@
 
 .logo-name{
     cursor:pointer
-}
-
-.logoname
-
-{
-    font-family: "Sankofa Display", "sans-serif"; 
-     font-size:20px;
-     font-weight:600;
-     background: linear-gradient(267deg, #add550 0.36%, #5b0b42 100%);
-     -webkit-background-clip: text;
-      background-clip: text; 
-      color:transparent;
-}
-
-.logoname-end
-{
-    background: linear-gradient(267deg, #Da7c25 0.36%, #2c2130 100%);
-    -webkit-background-clip: text;
-     background-clip: text; 
-     font-size:60px;
-     font-weight:600;
-     font-family: "Sankofa Display", "sans-serif";
-     color:transparent;
 }
