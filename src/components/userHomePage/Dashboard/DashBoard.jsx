@@ -44,7 +44,7 @@ const DashBoard = () => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className=" 100vh">Loading...</p>;
   }
 
   return (
@@ -99,6 +99,22 @@ const DashBoard = () => {
                     </div>
                   );
                 })}
+              </div>
+              {/* YouTube Video Card */}
+              <div className="card mt-3" style={{ width: "20rem" }}>
+                <div className="card-body">
+                  <h5 className="card-title">YouTube Video</h5>
+                  <iframe
+                    width="100%"
+                    height="230"
+                    src="https://www.youtube.com/watch?v=VERiuOff3Vw&list=PPSV"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                  <p className="card-text mt-2">here is a video to motivate your study and make your self ready to study hard and align with your feild</p>
+                </div>
               </div>
               <h3 className="course text-center h2 mt-3">Courses</h3>
               <hr/>

@@ -1,0 +1,30 @@
+.option-ul{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    gap:20px;
+}
+.search-li{
+    background:white;
+    padding:7px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    width:100%;
+}
+.search-li input:focus,.search-li input{
+    outline:none;
+    border:none;
+}
+.login-button,.register-button
+{
+    width:100%;
+    color:black;
+    background-color: white;
+    border:solid black 0.4px;
+
+}
+.login-button:hover,.register-button:hover{
+    background-color: black;
+    color:white;
+    /* border:solid black 0.4px; */
+}

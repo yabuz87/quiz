@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { auth, provider } from './firebase/Firebase';
+import { auth, provider } from '../firebase/Firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Spinner.css';
+import '../Spinner.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ const Login = () => {
     
             </div>
           )}
-          <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ paddingTop: "20px" }}>
+          <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ marginTop: "70px" }}>
             <div style={{ width: "75%" }}>
               <div className="card p-2">
                 <h1 className="text-center">Login</h1>
@@ -79,10 +79,10 @@ const Login = () => {
                     />
                     <label className="card-title">Password:</label>
                     <input
-                      type="text"
+                      type="password"
                       className="form-control w-100"
                       onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Last Name"
+                      placeholder="Password"
                       required
                     />
                     <button type="submit" className="btn btn-primary my-2 px-5 w-100">login</button>

@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import  Home from "./components/Home"
+import  Home from "./components/Home/Home"
 import Register from './components/Register';
-import Login from './components/login';
+import Login from './components/Login/Login';
 import DashBoard from './components/userHomePage/Dashboard/DashBoard';
 
 const App = () => {
