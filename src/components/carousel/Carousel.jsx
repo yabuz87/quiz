@@ -4,7 +4,6 @@ import image from '../../assets/examCarousel.jpg';
 import '../Home/index.css';
 import './carousel.css';
 
-
 const Carousel = () => {
   return (
     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
@@ -23,15 +22,15 @@ const Carousel = () => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src={image} className="d-block w-100 img-fluid" alt="..." />
-          <div className="carousel-caption d-none d-md-block">
+          <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
             <h5 className="text-light text-center">{photoObj[0].name}</h5>
-            <p className="text-light text-center">Some representative</p>
+            <p className="text-light text-center">Some representative placeholder content for the first slide.</p>
           </div>
         </div>
         {photoObj.slice(1).map((item, index) => (
           <div className="carousel-item" key={index + 1}>
             <img src={image} className="d-block w-100 img-fluid" alt={`Slide ${index + 2}`} />
-            <div className="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
               <h5 className="text-light text-center">{item.name}</h5>
               <p className="text-light text-center">Some representative placeholder content for slide {index + 2}.</p>
             </div>

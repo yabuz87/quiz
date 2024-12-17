@@ -2,6 +2,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { auth, db } from '../../firebase/Firebase';
 import { useNavigate } from 'react-router-dom';
+import Exam from "../../Exam/Exam"
 import { photoObj } from "../../../assets/photObj";
 import './index.css';
 
@@ -81,43 +82,9 @@ const DashBoard = () => {
                 <i className="bi bi-person-fill icon" data-toggle="tooltip" data-placement="bottom" title="Profile"></i>
                 <i className="bi bi-gear icon" data-toggle="tooltip" data-placement="bottom" title="Setting"></i>
               </div>
-              <hr/>
             </div>
             <div className="body-section">
-              <h3 className="text-center">Quick Options</h3>
-              <hr/>
-              <div className="quick-option">
-                {photoObj.map((item, index) => {
-                  return (
-                    <div className="card" style={{ width: "18rem" }} key={index}>
-                      <img src={item.img} className="card-img-top" style={{ width: "100%", height: "230px" }} />
-                      <div className="card-body">
-                        <h5 className="card-title">{item.name}</h5>
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" className="btn card-btn px-5">Go</a>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              {/* YouTube Video Card */}
-              <div className="card mt-3" style={{ width: "20rem" }}>
-                <div className="card-body">
-                  <h5 className="card-title">YouTube Video</h5>
-                  <iframe
-                    width="100%"
-                    height="230"
-                    src="https://www.youtube.com/watch?v=VERiuOff3Vw&list=PPSV"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                  <p className="card-text mt-2">here is a video to motivate your study and make your self ready to study hard and align with your feild</p>
-                </div>
-              </div>
-              <h3 className="course text-center h2 mt-3">Courses</h3>
-              <hr/>
+             <Exam/>
             </div>
           </div>
         </>

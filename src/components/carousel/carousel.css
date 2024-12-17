@@ -32,7 +32,13 @@
   .carousel-control-next {
     right: -60px; /* Position to the right of the carousel */
   }
-  
+  .carousel-caption {
+     position: absolute;
+     top: 30%; 
+    left: 50%;
+    
+     transform: translate(-2%, -50%);
+    text-align:center}
   .carousel-indicators {
     position: relative;
     text-align: center;

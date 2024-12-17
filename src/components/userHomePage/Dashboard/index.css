@@ -7,7 +7,7 @@
     left:0;
     z-index: 11;
     height:100%;
-    background-color:rgb(225, 225, 225);
+    background-color:whitesmoke;
 }
 .profile-sec {
     display:flex;
@@ -69,7 +69,7 @@
 .detail-section{
     
     width:100%;
-    padding-top:70px;
+    padding-top:50px;
     display:flex;
     padding-left:170px;
     flex-direction: column;
@@ -86,7 +86,7 @@
    z-index: 10;
    padding:10px 4px;
    align-items: center;
-   background-color:rgb(225, 225, 225);
+   background-color:whitesmoke;
    justify-content:space-around;
    flex:1 1 1;
    font-size:20px;
@@ -107,7 +107,7 @@
 }
 .icon{
     padding:3px;
-    background-color: whitesmoke;  
+    background-color:aliceblue;  
 }
 
 .header-nav div i:hover{
@@ -117,6 +117,7 @@
 .search-sec{
 
     background-color:whitesmoke;
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3);
     padding:5px 10px;
     border-radius: 20px;;
 }
@@ -148,8 +149,9 @@
     width: 100%;
 }
 .logout-btn:hover{
-    background-color: #333;
-    color:white;
+    background-color: white;
+    color:black;
+    border:solid black 0.5px;
 }
 
 .logo-name{
