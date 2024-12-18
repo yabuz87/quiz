@@ -62,7 +62,7 @@ const Login = () => {
     
             </div>
           )}
-          <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ marginTop: "70px" }}>
+          <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ marginTop: "120px" }}>
             <div style={{ width: "75%" }}>
               <div className="card p-2">
                 <h1 className="text-center">Login</h1>

@@ -74,7 +74,7 @@ const Register = () => {
 
         </div>
       )}
-      <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ paddingTop: "20px" }}>
+      <div className="col col-lg-6 container-lg d-flex justify-content-center align-items-center" style={{ paddingTop: "90px"}}>
         <div style={{ width: "75%" }}>
           <div className="card p-2">
             <h1 className="text-center">Register</h1>

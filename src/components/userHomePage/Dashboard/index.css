@@ -11,7 +11,7 @@
 }
 .profile-sec {
     display:flex;
-    margin-top:50px;
+    margin-top:100px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -69,14 +69,14 @@
 .detail-section{
     
     width:100%;
-    padding-top:50px;
+    padding-top:60px;
     display:flex;
     padding-left:170px;
     flex-direction: column;
 }
 .header-nav{
     position: fixed;
-    margin-left:170px; 
+    margin-left:150px; 
     left:0;
     top:0px;
    height:60px;
