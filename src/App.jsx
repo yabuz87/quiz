@@ -6,6 +6,9 @@ import Register from './components/Register';
 import Login from './components/Login/Login';
 import DashBoard from './components/userHomePage/Dashboard/DashBoard';
 import { MyContext, MyProvider } from './Context';
+import Chapter from './components/Exam/Chapter';
+import CoursesAndChapters from './components/Exam/CoursesAndChapters';
+import Questions from './components/Exam/Questions';
 
 const App = () => {
   return (
@@ -17,6 +20,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/chapter" element={<Chapter/>}/>
         </Routes>
       </Router>
       </MyProvider>
