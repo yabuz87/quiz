@@ -1,37 +1,61 @@
-import React, { useEffect, useState } from 'react';
-import { adminDb } from './firebaseConfig'; // Ensure you import the admin database reference correctly
-import { collection, getDocs } from 'firebase/firestore';
+import React, { useState, useEffect } from 'react';
+import fetchCourses from '../Exam/ExamFetched'; // Ensure correct import
 
 const CoursesAndChapters = () => {
   const [courses, setCourses] = useState([]);
+  const [selectedCourse, setSelectedCourse] = useState('');
+  const [selectedChapter, setSelectedChapter] = useState('');
+  const [chapters, setChapters] = useState([]);
 
   useEffect(() => {
-    const fetchCourses = async () => {
-      const courseCollection = collection(adminDb, 'courses');
-      const courseSnapshot = await getDocs(courseCollection);
-      const courseList = courseSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
+    const fetchData = async () => {
+      const courseList = await fetchCourses();
       setCourses(courseList);
     };
 
-    fetchCourses();
+    fetchData();
   }, []);
 
+  const handleCourseChange = (e) => {
+    const course = e.target.value;
+    setSelectedCourse(course);
+    const selectedCourse = courses.find(c => c.id === course);
+    setChapters(selectedCourse?.chapters || []);
+  };
+
+  const handleChapterChange = (e) => {
+    setSelectedChapter(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Selected Course: ", selectedCourse);
+    console.log("Selected Chapter: ", selectedChapter);
+    // Fetch and display questions based on the selection
+  };
+
   return (
-    <div>
-      {courses.map(course => (
-        <div key={course.id}>
-          <h2>{course.courseName}</h2>
-          <ul>
-            {course.chapters.map(chapter => (
-              <li key={chapter}>{chapter}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Course:</label>
+        <select value={selectedCourse} onChange={handleCourseChange}>
+          <option value="">Select a course</option>
+          {courses.map(course => (
+            <option key={course.id} value={course.id}>{course.courseName}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label>Chapter:</label>
+        <select value={selectedChapter} onChange={handleChapterChange} disabled={!selectedCourse}>
+          <option value="">Select a chapter</option>
+          {chapters.map(chapter => (
+            <option key={chapter} value={chapter}>{chapter}</option>
+          ))}
+        </select>
+      </div>
+      <button type="submit" disabled={!selectedChapter}>Get Questions</button>
+    </form>
   );
 };
 

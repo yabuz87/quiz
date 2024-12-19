@@ -7,8 +7,7 @@ import Login from './components/Login/Login';
 import DashBoard from './components/userHomePage/Dashboard/DashBoard';
 import { MyContext, MyProvider } from './Context';
 import Chapter from './components/Exam/Chapter';
-import CoursesAndChapters from './components/Exam/CoursesAndChapters';
-import Questions from './components/Exam/Questions';
+
 
 const App = () => {
   return (

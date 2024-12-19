@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { MyContext } from '../../context'; // Ensure correct import path
+import { MyContext } from "../../Context"; // Ensure correct import path
 import { useNavigate } from 'react-router-dom';
 import './exam.css';
 
